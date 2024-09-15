@@ -7,5 +7,8 @@ export default defineConfig({
   base: "/",
   modules: {
     localsConvention: "camelCase"
+  },
+  resolve: {
+    extensions: ['.js','.jsx']
   }
 })
