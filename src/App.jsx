@@ -1,7 +1,7 @@
 import styles from './App.module.css'
 
-import { About } from './components/About/About'
-import { Navbar } from './components/NavBar/NavBar'
+import { About } from './components/About/About.jsx'
+import { Navbar } from './components/NavBar/Navbar.jsx'
 import { Projectlist } from './components/Projectlist/Projectlist'
 import { Contact } from './components/Contact/Contact'
 
