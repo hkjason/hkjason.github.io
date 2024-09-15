@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Cave Diver",
+        "description": "A procedurally generated cave exploration game, implemented using agents, cellular automata, simplex noise and marching cubes. Comes with real-time cave destruction and map update, and also a combat system with bat enemy AI.",
+        "image": "caveDiver.png"
+    },
+    {
+        "title": "Math Lab",
+        "description": "A mathematics educational application. Implemented using Unity, with NodeJS and MongoDB as backend. It provides a real-time interactive system to simulate online learning experience using gamification. Biligual UI is used to improve accessibility.",
+        "image": "mathLab.png"
+    },
+    {
+        "title": "Behind You",
+        "description": "A 2.5D story game. Developed during Global Game Jam 2021 with other jammers.",
+        "image": "cover.png"
+    },
+    {
+        "title": "Dungeon Adventure",
+        "description": "A 2D roguelike mobile game, includes a turn-based combat system. Collaborated with another game developer.",
+        "image": "battleRoom.png"
+    },
+    {
+        "title": "The Dungeon",
+        "description": "A dungeon exploration game. Featuring a dungeon generation algorithm with connected rooms of varying sizes. 3D character controller with combat animation is done.",
+        "image": "roomGeneration.png"
+    },
+    {
+        "title": "BattleGirl 2D",
+        "description": "Classic 2D arcade plane shooter published to Google Play. Developed with a team of game development enthusiast during my university year one, this projected marked the start of my game development journey.",
+        "image": "menu.png"
+    }
+]

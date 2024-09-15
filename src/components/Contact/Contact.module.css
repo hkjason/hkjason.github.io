@@ -1,0 +1,58 @@
+@import '../../vars.css';
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primary);
+    height:8vh;
+    width:80vw;
+    max-width: 1080px;
+    margin: auto;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    min-width: 130px;
+}
+
+.menuItems {
+    display: flex;
+    gap: 48px;
+    list-style: none;
+    align-items: center;
+}
+
+.menuItems a {
+    font-size: 24px;
+    color: var(--color-secondary);
+    align-items: center;
+    text-decoration: none;
+}
+
+.menuItems li {
+    border-bottom: 2px solid transparent
+}
+
+.menuItems li:hover {
+    border-bottom: 2px solid var(--color-accent1)
+}
+
+@media (max-width: 864px) {
+    .contactText {
+        display: none;
+    }
+
+    .menuItems {
+        display: flex;
+        gap: 24px;
+        list-style: none;
+    }
+}

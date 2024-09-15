@@ -1,0 +1,36 @@
+@import '../../vars.css';
+
+.aboutSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    width:80vw;
+    max-width: 1080px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding-top: 8vh;
+}
+
+.aboutSection h2 {
+    width: 100%;
+}
+
+.aboutSection p {
+    padding-top: 16px;
+    font-size: 16px;
+}
+
+.contact {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.contact a {
+    text-decoration: none;
+
+}
+
+.contact a:hover {
+    border-bottom: 2px solid var(--color-accent1);
+}
