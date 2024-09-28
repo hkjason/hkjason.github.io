@@ -1,0 +1,52 @@
+@import "../../vars.css";
+
+.gamepageBackground {
+    background-color: var(--color-primary);
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0px;
+}
+
+.gamepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    width:80vw;
+    max-width: 1080px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding-top: 8vh;
+}
+
+.gamepage h1 {
+    font-size: 72px;
+}
+
+.gamepage td {
+    padding: 4px;
+}
+
+
+.gameImages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+}
+
+.gameImages img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: 16/9;
+    min-height: 337.5px;
+    min-width: 337.5px;
+}
+
+
+@media (max-width: 768px) {
+    .gameImages {
+        grid-template-columns: 1fr;
+    }
+}

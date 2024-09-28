@@ -1,32 +1,38 @@
 [
     {
+        "id": "1",
         "title": "Cave Diver",
         "description": "A procedurally generated cave exploration game, implemented using agents, cellular automata, simplex noise and marching cubes. Comes with real-time cave destruction and map update, and also a combat system with bat enemy AI.",
-        "image": "caveDiver.png"
+        "image": "games/caveDiver/caveDiver.png"
     },
     {
+        "id": "2",
         "title": "Math Lab",
         "description": "A mathematics educational application. Implemented using Unity, with NodeJS and MongoDB as backend. It provides a real-time interactive system to simulate online learning experience using gamification. Biligual UI is used to improve accessibility.",
-        "image": "mathLab.png"
+        "image": "games/mathLab/mathLab.png"
     },
     {
+        "id": "3",
         "title": "Behind You",
         "description": "A 2.5D story game. Developed during Global Game Jam 2021 with other jammers.",
-        "image": "cover.png"
+        "image": "games/behindYou/behindYou.png"
     },
     {
+        "id": "4",
         "title": "Dungeon Adventure",
         "description": "A 2D roguelike mobile game, includes a turn-based combat system. Collaborated with another game developer.",
-        "image": "battleRoom.png"
+        "image": "games/dungeonAdventure/dungeonAdventure.png"
     },
     {
+        "id": "5",
         "title": "The Dungeon",
         "description": "A dungeon exploration game. Featuring a dungeon generation algorithm with connected rooms of varying sizes. 3D character controller with combat animation is done.",
-        "image": "roomGeneration.png"
+        "image": "games/theDungeon/theDungeon.png"
     },
     {
+        "id": "6",
         "title": "BattleGirl 2D",
         "description": "Classic 2D arcade plane shooter published to Google Play. Developed with a team of game development enthusiast during my university year one, this projected marked the start of my game development journey.",
-        "image": "menu.png"
+        "image": "games/battleGirl2D/battleGirl2D.png"
     }
 ]

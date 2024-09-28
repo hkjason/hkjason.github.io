@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "title": "Cave Diver",
+        "software": "Unity",
+        "languages": "C#, HLSL",
+        "description": "A procedurally generated cave exploration game, implemented using agents, cellular automata, simplex noise and marching cubes. Comes with real-time cave destruction and map update, and also a combat system with bat enemy AI.",
+        "images": ["games/caveDiver/caveDiver.png","games/caveDiver/dig.gif","games/caveDiver/shoot.gif", "games/caveDiver/base.gif", "games/caveDiver/gen.gif", "games/caveDiver/map.jpg", "games/caveDiver/scene.png", "games/caveDiver/shop.jpg"]
+    },
+    {
+        "id": "2",
+        "title": "Math Lab",
+        "software": "Unity",
+        "languages": "C#",
+        "description": "A mathematics educational application. Implemented using Unity, with NodeJS and MongoDB as backend. It provides a real-time interactive system to simulate online learning experience using gamification. Biligual UI is used to improve accessibility.",
+        "images": ["games/mathLab/mathLab.png"]
+    },
+    {
+        "id": "3",
+        "title": "Behind You",
+        "software": "Unity",
+        "languages": "C#",
+        "description": "A 2.5D story game. Developed during Global Game Jam 2021 with other jammers.",
+        "images": ["games/behindYou/behindYou.png"]
+    },
+    {
+        "id": "4",
+        "title": "Dungeon Adventure",
+        "software": "Unity",
+        "languages": "C#",
+        "description": "A 2D roguelike mobile game, includes a turn-based combat system. Collaborated with another game developer.",
+        "images": ["games/dungeonAdventure/dungeonAdventure.png"]
+    },
+    {
+        "id": "5",
+        "title": "The Dungeon",
+        "software": "Unity",
+        "languages": "C#",
+        "description": "A dungeon exploration game. Featuring a dungeon generation algorithm with connected rooms of varying sizes. 3D character controller with combat animation is done.",
+        "images": ["games/theDungeon/theDungeon.png"]
+    },
+    {
+        "id": "6",
+        "title": "BattleGirl 2D",
+        "software": "Unity",
+        "languages": "C#",
+        "description": "Classic 2D arcade plane shooter published to Google Play. Developed with a team of game development enthusiast during my university year one, this projected marked the start of my game development journey.",
+        "images": ["games/battleGirl2D/battleGirl2D.png"]
+    }
+]

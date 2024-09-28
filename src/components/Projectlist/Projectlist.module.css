@@ -23,6 +23,11 @@
     margin: auto;
     padding-top: 2vh;
     padding-bottom: 2vh;
+    border-radius: 12px;
+}
+
+.project:hover {
+    background-color: #152C45;
 }
 
 .projectContent {

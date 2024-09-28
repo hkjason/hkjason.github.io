@@ -1,0 +1,20 @@
+@import "../../vars.css";
+
+.NotFound {
+    background-color: var(--color-primary);
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0px;
+}
+
+.title {
+    text-align: center;
+    font-size: 72px;
+    padding-top: 20vh;
+}
+
+.text {
+    text-align: center;
+    font-size: 28px;
+    padding-top: 2vh;
+}

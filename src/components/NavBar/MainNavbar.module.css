@@ -1,0 +1,103 @@
+@import '../../vars.css';
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    left:50vw;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    height:8vh;
+    width:80vw;
+    max-width: 1080px;
+    z-index: 1;
+}
+
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-secondary);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menuItems {
+    display: flex;
+    gap: 48px;
+    list-style: none;
+}
+
+.menuItems a {
+    font-size: 24px;
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+.menuItems li {
+    border-bottom: 2px solid transparent
+}
+
+.menuItems li:hover {
+    border-bottom: 2px solid var(--color-accent1)
+}
+
+.menuBtn {
+    display: none;
+}
+
+@media (max-width: 750px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow: visible;
+    }
+    
+    .menuItems {
+        display: none;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        gap: 12px;
+    }
+
+    .menuItems.active {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        top: 24px;
+        height: auto;
+        width: auto;
+        z-index: 2;
+        overflow: visible;
+        background-color: #001528;
+        border-top: 2px groove var(--color-accent);
+        border-bottom: 2px groove var(--color-accent);
+    }
+
+    .menuBtn {
+        display: block;
+    }
+
+    header {
+        justify-self:center;
+    }
+
+    .menu {
+        display: flex;
+        align-items: flex-end;
+        justify-items: center;
+        padding-right: 8px;
+        flex-direction: column;
+        position: absolute;
+        right:0;
+        top:4vh;
+        transform: translateY(-50%);
+        overflow: visible;
+    }
+}

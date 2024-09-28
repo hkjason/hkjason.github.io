@@ -1,0 +1,40 @@
+@import '../../vars.css';
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    left:50vw;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    height:8vh;
+    width:80vw;
+    max-width: 1080px;
+    z-index: 1;
+}
+
+.title {
+    display: flex;
+    font-size: 32px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-secondary);
+    align-items: center;
+}
+
+.title:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 750px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow: visible;
+    }
+
+    header {
+        justify-self:center;
+    }
+}

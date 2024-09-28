@@ -1,51 +1,14 @@
-import React, {useState, useRef, useEffect} from 'react';
-import styles from './Navbar.module.css'
-
-import { GiHamburgerMenu } from "react-icons/gi";
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { MainNavbar } from './MainNavbar.jsx';
+import { ReturnNavbar } from './ReturnNavbar.jsx';
 
 export const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const menuRef = useRef(null);
+  const location = useLocation();
+  
+  // Check if the current path is the main page
+  const isMainPage = location.pathname === "/";
 
-    useEffect(() => {
-        function handleClickOutside(event) {
-          if (menuRef.current && !menuRef.current.contains(event.target)) {
-            setMenuOpen(false);
-          }
-        }
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-          document.removeEventListener("mousedown", handleClickOutside);
-        };
-      }, [menuRef]);
-
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
-    return (
-        <div className = {styles.navbar}>
-            <header>
-                <p className = {styles.title}>
-                    Jason Yeung
-                </p>
-            </header>
-            <nav className = {styles.menu} ref={menuRef}>
-                <GiHamburgerMenu className = {styles.menuBtn} size={24} onClick={toggleMenu}></GiHamburgerMenu>
-                <ul className={`${styles.menuItems} ${menuOpen ? styles.active : ''}`} onClick={toggleMenu}>
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <li>
-                        <a href="#projects">Projects</a>
-                    </li>
-                    {/* 
-                    <li>
-                        <a href="#experience">Experience</a>
-                    </li>
-                    */}
-                </ul>
-            </nav>
-        </div>
-    );
+  // Conditionally render the navbar based on the current route
+  return isMainPage ? <MainNavbar /> : <ReturnNavbar />;
 };
