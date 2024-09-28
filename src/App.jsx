@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 import styles from './App.module.css'
 
-import { Navbar } from './components/Navbar/Navbar.jsx';
+import { NavBar } from './components/NavBar/NavBar.jsx';
 import { MainPage } from './components/MainPage/MainPage.jsx'
 import { GamePage } from './components/GamePage/GamePage.jsx'
 import { NotFound } from './components/NotFound/NotFound.jsx'
@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop/>
-      <Navbar/>
+      <NavBar/>
           <Routes>
             <Route exact path = "/" element={<MainPage />} />
             <Route path = "/games/:gameId" element={<GamePage/>} />

@@ -1,11 +1,11 @@
 import React, {useState, useRef, useEffect} from 'react';
-import styles from './ReturnNavbar.module.css';
+import styles from './ReturnNavBar.module.css';
 
 import { useNavigate } from 'react-router-dom';
 
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-export const ReturnNavbar = () => {
+export const ReturnNavBar = () => {
     const navigate = useNavigate();
     const backClick = () => {
         navigate("/");

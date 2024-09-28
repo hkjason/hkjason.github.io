@@ -3,7 +3,7 @@ import styles from './MainNavbar.module.css';
 
 import { GiHamburgerMenu } from "react-icons/gi";
 
-export const MainNavbar = () => {
+export const MainNavBar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuRef = useRef(null);
 
