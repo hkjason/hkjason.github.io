@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 import styles from './App.module.css'
 
-import { Navbar } from './components/Navbar/Navbar';
+import { Navbar } from './components/Navbar/Navbar.jsx';
 import { MainPage } from './components/MainPage/MainPage.jsx'
 import { GamePage } from './components/GamePage/GamePage.jsx'
 import { NotFound } from './components/NotFound/NotFound.jsx'
