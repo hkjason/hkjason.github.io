@@ -10,5 +10,5 @@ export const NavBar = () => {
   const isMainPage = location.pathname === "/";
 
   // Conditionally render the navbar based on the current route
-  return isMainPage ? <MainNavBar /> : <ReturnNavBar />;
+  return (isMainPage ? <MainNavBar /> : <ReturnNavBar />);
 };
