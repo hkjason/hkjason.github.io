@@ -50,7 +50,7 @@
         "software": "Unity",
         "languages": "C#",
         "description": "Classic 2D arcade plane shooter published to Google Play. Developed with a team of game development enthusiast during my university year one, this projected marked the start of my game development journey.",
-        "images": ["games/battleGirl2D/battleGirl2D.png"],
+        "images": ["games/battleGirl2D/battleGirl2D.png","games/battleGirl2D/battle2.gif","games/battleGirl2D/shop.png","games/battleGirl2D/battle1.gif"],
         "reference": "mobile"
     }
 ]
