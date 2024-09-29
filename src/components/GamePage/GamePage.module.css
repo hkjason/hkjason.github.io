@@ -45,8 +45,13 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
     .gameImages {
         grid-template-columns: 1fr;
+    }
+
+    .gameImages img {
+        min-height: 80vw;
+        min-width: 80vw;
     }
 }

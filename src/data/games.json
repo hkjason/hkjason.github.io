@@ -13,7 +13,7 @@
         "software": "Unity",
         "languages": "C#",
         "description": "A mathematics educational application. Implemented using Unity, with NodeJS and MongoDB as backend. It provides a real-time interactive system to simulate online learning experience using gamification. Biligual UI is used to improve accessibility.",
-        "images": ["games/mathLab/mathLab.png"]
+        "images": ["games/mathLab/mathLab.png","games/mathLab/exercises.png","games/mathLab/assign.png","games/mathLab/courses.png","games/mathLab/review.png","games/mathLab/menu.png"]
     },
     {
         "id": "3",
@@ -21,7 +21,7 @@
         "software": "Unity",
         "languages": "C#",
         "description": "A 2.5D story game. Developed during Global Game Jam 2021 with other jammers.",
-        "images": ["games/behindYou/behindYou.png"]
+        "images": ["games/behindYou/behindYou.png", "games/behindYou/story.png", "games/behindYou/queue.gif","games/behindYou/coin.gif", "games/behindYou/boss.gif", "games/behindYou/ending.gif"]
     },
     {
         "id": "4",
@@ -29,7 +29,7 @@
         "software": "Unity",
         "languages": "C#",
         "description": "A 2D roguelike mobile game, includes a turn-based combat system. Collaborated with another game developer.",
-        "images": ["games/dungeonAdventure/dungeonAdventure.png"]
+        "images": ["games/dungeonAdventure/dungeonAdventure.png","games/dungeonAdventure/battle.gif","games/dungeonAdventure/character.png","games/dungeonAdventure/room.png","games/dungeonAdventure/equipment.png","games/dungeonAdventure/skill.png"]
     },
     {
         "id": "5",
