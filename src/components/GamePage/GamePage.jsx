@@ -39,6 +39,7 @@ export const GamePage = () => {
                             key={index}
                             src={getImageUrl(image)}
                             alt={`${game.title} image ${index + 1}`}
+                            className={styles[game.reference]}
                         />
                     ))}
                 </div>

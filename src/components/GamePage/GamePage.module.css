@@ -36,12 +36,23 @@
 }
 
 .gameImages img {
+    object-fit: contain;
+    width: 100%;
+    justify-self: center;
+}
+
+.pc {
     width: 100%;
     height: auto;
-    object-fit: contain;
-    aspect-ratio: 16/9;
-    min-height: 337.5px;
     min-width: 337.5px;
+    aspect-ratio: 16/9;
+}
+
+.mobile {
+    max-width: 337.5px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9/16;
 }
 
 
@@ -50,8 +61,8 @@
         grid-template-columns: 1fr;
     }
 
-    .gameImages img {
-        min-height: 80vw;
+    .pc {
         min-width: 80vw;
+        height: auto;
     }
 }

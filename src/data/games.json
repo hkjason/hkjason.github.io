@@ -5,7 +5,8 @@
         "software": "Unity",
         "languages": "C#, HLSL",
         "description": "A procedurally generated cave exploration game, implemented using agents, cellular automata, simplex noise and marching cubes. Comes with real-time cave destruction and map update, and also a combat system with bat enemy AI.",
-        "images": ["games/caveDiver/caveDiver.png","games/caveDiver/dig.gif","games/caveDiver/shoot.gif", "games/caveDiver/base.gif", "games/caveDiver/gen.gif", "games/caveDiver/map.jpg", "games/caveDiver/scene.png", "games/caveDiver/shop.jpg"]
+        "images": ["games/caveDiver/caveDiver.png","games/caveDiver/dig.gif","games/caveDiver/shoot.gif", "games/caveDiver/base.gif", "games/caveDiver/gen.gif", "games/caveDiver/map.jpg", "games/caveDiver/scene.png", "games/caveDiver/shop.jpg"],
+        "reference": "pc"
     },
     {
         "id": "2",
@@ -13,7 +14,8 @@
         "software": "Unity",
         "languages": "C#",
         "description": "A mathematics educational application. Implemented using Unity, with NodeJS and MongoDB as backend. It provides a real-time interactive system to simulate online learning experience using gamification. Biligual UI is used to improve accessibility.",
-        "images": ["games/mathLab/mathLab.png","games/mathLab/exercises.png","games/mathLab/assign.png","games/mathLab/courses.png","games/mathLab/review.png","games/mathLab/menu.png"]
+        "images": ["games/mathLab/mathLab.png","games/mathLab/exercises.png","games/mathLab/assign.png","games/mathLab/courses.png","games/mathLab/review.png","games/mathLab/menu.png"],
+        "reference": "mobile"
     },
     {
         "id": "3",
@@ -21,7 +23,8 @@
         "software": "Unity",
         "languages": "C#",
         "description": "A 2.5D story game. Developed during Global Game Jam 2021 with other jammers.",
-        "images": ["games/behindYou/behindYou.png", "games/behindYou/story.png", "games/behindYou/queue.gif","games/behindYou/coin.gif", "games/behindYou/boss.gif", "games/behindYou/ending.gif"]
+        "images": ["games/behindYou/behindYou.png", "games/behindYou/story.png", "games/behindYou/queue.gif","games/behindYou/coin.gif", "games/behindYou/boss.gif", "games/behindYou/ending.gif"],
+        "reference": "pc"
     },
     {
         "id": "4",
@@ -29,7 +32,8 @@
         "software": "Unity",
         "languages": "C#",
         "description": "A 2D roguelike mobile game, includes a turn-based combat system. Collaborated with another game developer.",
-        "images": ["games/dungeonAdventure/dungeonAdventure.png","games/dungeonAdventure/battle.gif","games/dungeonAdventure/character.png","games/dungeonAdventure/room.png","games/dungeonAdventure/equipment.png","games/dungeonAdventure/skill.png"]
+        "images": ["games/dungeonAdventure/dungeonAdventure.png","games/dungeonAdventure/battle.gif","games/dungeonAdventure/character.png","games/dungeonAdventure/room.png","games/dungeonAdventure/equipment.png","games/dungeonAdventure/skill.png"],
+        "reference": "mobile"
     },
     {
         "id": "5",
@@ -37,7 +41,8 @@
         "software": "Unity",
         "languages": "C#",
         "description": "A dungeon exploration game. Featuring a dungeon generation algorithm with connected rooms of varying sizes. 3D character controller with combat animation is done.",
-        "images": ["games/theDungeon/theDungeon.png"]
+        "images": ["games/theDungeon/theDungeon.png","games/theDungeon/battle.gif","games/theDungeon/room.png","games/theDungeon/smith.gif"],
+        "reference": "pc"
     },
     {
         "id": "6",
@@ -45,6 +50,7 @@
         "software": "Unity",
         "languages": "C#",
         "description": "Classic 2D arcade plane shooter published to Google Play. Developed with a team of game development enthusiast during my university year one, this projected marked the start of my game development journey.",
-        "images": ["games/battleGirl2D/battleGirl2D.png"]
+        "images": ["games/battleGirl2D/battleGirl2D.png"],
+        "reference": "mobile"
     }
 ]
