@@ -40,7 +40,7 @@ export const MainNavBar = () => {
                         <a href="#projects">Projects</a>
                     </li>
                     <li>
-                        <a href="shaders">Sim</a>
+                        <a href="/shaders">Sim</a>
                     </li>
                     {/* 
                     <li>
