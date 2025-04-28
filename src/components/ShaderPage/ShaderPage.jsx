@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { ShaderPageError } from "./ShaderPageError.jsx";
 
 import moveShader from './move.wgsl?raw';
 import diffuseShader from './diffuse.wgsl?raw';
@@ -6,15 +7,41 @@ import renderShader from './render.wgsl?raw';
 
 export function ShaderPage() {
     const canvasRef = useRef();
+    const [isWebGPUSupported, setIsWebGPUSupported] = useState(true);
 
     useEffect(() => {
         const canvas = canvasRef.current;
-        const adapterPromise = navigator.gpu.requestAdapter();
+        async function checkWebGPU() {
+            if (!navigator.gpu) {
+                const errorMessage = 'WebGPU is not supported in this browser. Please use a WebGPU-compatible browser (e.g., Chrome 113+ or Edge 113+).';
+                console.error(errorMessage);
+                return false;
+            }
+
+            try {
+                const adapter = await navigator.gpu.requestAdapter();
+                if (!adapter) {
+                    const errorMessage = 'No GPU adapter found. Please ensure hardware acceleration is enabled or use a device with a compatible GPU.';
+                    console.error(errorMessage);
+                    return false;
+                }
+                return adapter; // Return adapter if valid
+            } catch (err) {
+                const errorMessage = `WebGPU initialization failed: ${err.message}`;
+                console.error(errorMessage);
+                return false;
+            }
+        }
         
         let agentBuffer, uniformBuffer, trailTextureA, trailTextureB;
         let animationFrameId;
 
-        adapterPromise.then(async (adapter) => {
+        checkWebGPU().then(async (adapter) => {
+            if (!adapter) {
+                setIsWebGPUSupported(false);
+                return;
+            }
+            
             const device = await adapter.requestDevice();
             const context = canvas.getContext('webgpu');
 
@@ -262,5 +289,9 @@ export function ShaderPage() {
         }
     }, []);
 
-    return <canvas ref={canvasRef} width={1920} height={1080} style={{ width: '100%', height: 'auto' }} />;
+    if (!isWebGPUSupported) {
+        return <ShaderPageError />;
+    }
+
+    return <canvas ref={canvasRef} width={1920} height={1080} style={{width: '100%', height: 'auto'}}/>;
 }

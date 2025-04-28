@@ -1,0 +1,21 @@
+.container {
+    padding: 10%;
+    text-align: left;
+    color: red;
+    background: #0D1B2A;
+    border-radius: 12px;
+}
+
+.list {
+    text-align: left;
+    margin: 0 auto;
+}
+
+.code {
+    font-family: monospace;
+}
+
+.link {
+    color: blue;
+    text-decoration: underline;
+}
