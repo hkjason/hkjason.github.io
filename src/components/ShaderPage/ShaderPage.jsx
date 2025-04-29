@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { ShaderPageError } from "./ShaderPageError.jsx";
+import { ControlPanel } from "./ControlPanel.jsx";
+
+import styles from "./ShaderPage.module.css";
 
 import moveShader from './move.wgsl?raw';
 import diffuseShader from './diffuse.wgsl?raw';
@@ -9,6 +12,26 @@ export function ShaderPage() {
     const canvasRef = useRef();
     const [isWebGPUSupported, setIsWebGPUSupported] = useState(true);
 
+    const gridSizeX= 1920; //1080
+    const gridSizeY =1080; //2160
+    const agentCount = useRef(100000);
+    const time = useRef(0.0);
+    const deltaTime = useRef(0.0);
+    const moveSpeed = useRef(92.5);
+    const turnRate = useRef(75.0);
+    const sensorAngle = useRef(31.9);
+    const sensorDistance = useRef(11.6);
+    const decayRate = useRef(0.4);
+    const diffuseRate = useRef(0.174);
+    
+    const setSpeed = (val) => moveSpeed.current = val;
+    const setTurnRate = (val) => turnRate.current = val;
+    const setSensorAngle = (val) => sensorAngle.current = val;
+    const setSensorDistance = (val) => sensorDistance.current = val;
+    const setDecayRate = (val) => decayRate.current = val;
+    const setDiffuseRate = (val) => diffuseRate.current = val;
+    
+    
     useEffect(() => {
         const canvas = canvasRef.current;
         async function checkWebGPU() {
@@ -47,34 +70,9 @@ export function ShaderPage() {
 
             const format = navigator.gpu.getPreferredCanvasFormat();
             context.configure({ device, format });
-
-            const gridSizeX = 1920; //1080
-            const gridSizeY = 1080; //2160
-            const agentCount = 100000; //100000
-            const time = 0;
-            const deltaTime = 0;
-            const moveSpeed = 250;
-            const turnRate = 75;
-            const sensorAngle = 45;
-            const sensorDistance = 60;
-            const decayRate = 0.4;
-            const diffuseRate = 0.174;
-            const WORKGROUP_SIZE = 8;
             
-            const uniformData = new Float32Array([
-                gridSizeX, 
-                gridSizeY,
-                agentCount,
-                time,
-                deltaTime,
-                moveSpeed,
-                turnRate,
-                sensorAngle,
-                sensorDistance,
-                decayRate,
-                diffuseRate,
-                0.0
-            ]);
+            const uniformData = new Float32Array(12);
+            uniformData[11] = 0.0; //padding
             uniformBuffer = device.createBuffer({
                 label: "uniform buff",
                 size: 48,
@@ -82,8 +80,8 @@ export function ShaderPage() {
             });
             device.queue.writeBuffer(uniformBuffer, 0 , uniformData);
             
-            const agents = new Float32Array(agentCount * 4); // x, y, degree
-            for (let i = 0; i < agentCount; i++) {
+            const agents = new Float32Array(agentCount.current * 4); // x, y, degree
+            for (let i = 0; i < agentCount.current; i++) {
                 agents[i * 4] = Math.random() * gridSizeX;
                 agents[i * 4 + 1] = Math.random() * gridSizeY;
                 agents[i * 4 + 2] = Math.random() * Math.PI * 2.0;
@@ -239,15 +237,24 @@ export function ShaderPage() {
                 const delta = (now - lastTime) / 1000;
                 lastTime = now;
                 
+                uniformData[0] = 1920;//gridSizeX
+                uniformData[1] = 1080;//gridSizeY;
+                uniformData[2] = 100000;//agentCount;
                 uniformData[3] += delta; //Time.time
                 uniformData[4] = delta; //Time.deltaTime
+                uniformData[5] = moveSpeed.current;//moveSpeed
+                uniformData[6] = turnRate.current;//turnRate
+                uniformData[7] = sensorAngle.current;//sensorAngle
+                uniformData[8] = sensorDistance.current;//sensorDistance
+                uniformData[9] = decayRate.current;//decayRate
+                uniformData[10] = diffuseRate.current;//diffuseRate
                 
                 device.queue.writeBuffer(uniformBuffer, 0, uniformData);
                 
                 const computePass = encoder.beginComputePass();
                 computePass.setPipeline(computePipeline);
                 computePass.setBindGroup(0, useA ? computeBindGroupA : computeBindGroupB);
-                computePass.dispatchWorkgroups(Math.ceil(agentCount / 8));
+                computePass.dispatchWorkgroups(Math.ceil(agentCount.current / 8));
                 computePass.end();
                 
                 const diffusePass = encoder.beginComputePass();
@@ -293,5 +300,19 @@ export function ShaderPage() {
         return <ShaderPageError />;
     }
 
-    return <canvas ref={canvasRef} width={1920} height={1080} style={{width: '100%', height: 'auto'}}/>;
+    return (
+        <div className={styles.container}>
+            <canvas className = {styles.canvas} ref={canvasRef} width={1920} height={1080}/>;
+            <div className = {styles.controlPanel}>
+                <ControlPanel 
+                    speed = {moveSpeed.current} setSpeed={setSpeed}
+                    turnRate={turnRate.current} setTurnRate={setTurnRate}
+                    sensorAngle={sensorAngle.current} setSensorAngle={setSensorAngle}
+                    sensorDistance={sensorDistance.current} setSensorDistance={setSensorDistance}
+                    decayRate={decayRate.current} setDecayRate={setDecayRate}
+                    diffuseRate={diffuseRate.current} setDiffuseRate={setDiffuseRate}
+                />
+            </div>
+        </div>
+    );
 }
